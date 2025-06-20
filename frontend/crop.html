@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Advisory Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Full-Screen Background Container -->
+    <div id="background-container"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Crop Advisory Information</h1>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="weather.html">Weather</a>
+                <button id="reloadButton">Reload Data</button>
+                <input type="text" id="searchBar" placeholder="Search crops..." />
+            </nav>
+        </div>
+    </header>
+
+    <main class="crop-overlay">
+        <div id="crop-container" class="card-container"></div> <!-- Crop data will be inserted here -->
+    </main>
+
+    <script>
+        const cropImages = {
+            "Wheat": "images/img100.webp",
+            "Rice": "images/img111.webp",
+            "Maize": "images/img123.webp",
+            "Soybean": "images/img000.webp",
+            "Cotton": "images/cotton.webp",
+            "Sugarcane": "images/sugarcane.webp",
+            "Barley": "images/barley.webp",
+            "Groundnut": "images/groundnut.webp",
+            "Tomato": "images/tomato.webp",
+            "Chili": "images/chilli.webp"
+        };
+
+        let cropsData = []; // To store crop data for searching
+        let currentImageIndex = 0;
+        const cropNames = Object.keys(cropImages);
+
+        // Function to change the full-screen background image
+        function changeBackgroundImage() {
+            const backgroundContainer = document.getElementById('background-container');
+            const cropName = cropNames[currentImageIndex];
+            const imagePath = cropImages[cropName];
+            backgroundContainer.style.backgroundImage = `url('${imagePath}')`;
+
+            // Increment index or reset to 0 if it's the last image
+            currentImageIndex = (currentImageIndex + 1) % cropNames.length;
+        }
+
+        // Cycle through images every 5 seconds
+        setInterval(changeBackgroundImage, 5000);
+
+        // Initial background image on load
+        window.onload = () => {
+            changeBackgroundImage();
+            fetchCropData();
+            setupReloadButton();
+            setupSearchFunctionality();
+        };
+
+        // Fetch crop advisory data from the backend API
+        function fetchCropData() {
+            fetch('http://localhost:5000/api/crop/crop-advisory-json')
+                .then(response => response.json())
+                .then(data => {
+                    cropsData = data; // Store data for search use
+                    renderCropCards(data);
+                })
+                .catch(error => console.error('Error fetching crop advisory data:', error));
+        }
+
+        // Render crop cards without background images
+        function renderCropCards(crops) {
+            const container = document.getElementById('crop-container');
+            container.innerHTML = ''; // Clear previous cards
+
+            crops.forEach(crop => {
+                const cropCard = document.createElement('div');
+                cropCard.classList.add('crop-card');
+                cropCard.innerHTML = createCropCardContent(crop);
+                container.appendChild(cropCard);
+            });
+        }
+
+        // Generate the content HTML for each crop card
+        function createCropCardContent(crop) {
+            return `
+                <h3>${crop.crop}</h3>
+                <p><strong>Season:</strong> ${crop.season}</p>
+                <p><strong>Soil Type:</strong> ${crop.soil_type}</p>
+                <p><strong>Optimal Temperature:</strong> ${crop.optimal_temperature}</p>
+                <p><strong>Water Requirement:</strong> ${crop.water_requirement}</p>
+                <h4>Recommended Varieties:</h4>
+                <ul>
+                    ${(crop.recommended_varieties || []).map(variety => `<li>${variety}</li>`).join('')}
+                </ul>
+                <h4>Fertilizer Recommendations:</h4>
+                <ul>
+                    ${(crop.fertilizer_recommendations)
+                        ? Object.entries(crop.fertilizer_recommendations)
+                            .map(([nutrient, amount]) => `<li>${nutrient}: ${amount}</li>`).join('')
+                        : ''
+                    }
+                </ul>
+                <h4>Pest Management:</h4>
+                <ul>
+                    ${(crop.pest_management || []).map(pest => 
+                        `<li>${pest.pest}: ${pest.treatment}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        // Setup the reload button to refresh data
+        function setupReloadButton() {
+            const reloadButton = document.getElementById('reloadButton');
+            reloadButton.addEventListener('click', fetchCropData);
+        }
+
+        // Setup search functionality
+        function setupSearchFunctionality() {
+            const searchBar = document.getElementById('searchBar');
+            searchBar.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filteredCrops = cropsData.filter(crop =>
+                    crop.crop.toLowerCase().includes(query)
+                );
+                renderCropCards(filteredCrops); // Render only filtered results
+            });
+        }
+    </script>
+</body>
+</html>

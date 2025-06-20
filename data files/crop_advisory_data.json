@@ -1,0 +1,232 @@
+[
+    {
+        "crop": "Wheat",
+        "season": "Winter",
+        "soil_type": "Loamy",
+        "recommended_varieties": ["HD 2967", "WH 1080", "PBW 725"],
+        "optimal_temperature": "15-20°C",
+        "water_requirement": "450-650 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "120 kg/ha",
+            "phosphorus": "60 kg/ha",
+            "potassium": "40 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Stem Rust",
+                "treatment": "Use fungicide like Mancozeb at early stages."
+            },
+            {
+                "pest": "Wheat Aphid",
+                "treatment": "Use insecticide like Imidacloprid."
+            }
+        ]
+    },
+    {
+        "crop": "Rice",
+        "season": "Kharif",
+        "soil_type": "Clayey",
+        "recommended_varieties": ["IR 64", "Swarna", "MTU 1010"],
+        "optimal_temperature": "25-35°C",
+        "water_requirement": "900-2500 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "100 kg/ha",
+            "phosphorus": "50 kg/ha",
+            "potassium": "50 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Brown Planthopper",
+                "treatment": "Use insecticide like Buprofezin."
+            },
+            {
+                "pest": "Rice Blast",
+                "treatment": "Spray Tricyclazole at tillering stage."
+            }
+        ]
+    },
+    {
+        "crop": "Maize",
+        "season": "Summer",
+        "soil_type": "Sandy Loam",
+        "recommended_varieties": ["Dekalb 9120", "Pioneer 30V92", "Ganga Safed-2"],
+        "optimal_temperature": "18-27°C",
+        "water_requirement": "500-800 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "150 kg/ha",
+            "phosphorus": "70 kg/ha",
+            "potassium": "40 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Fall Armyworm",
+                "treatment": "Use insecticide like Lambda-cyhalothrin."
+            },
+            {
+                "pest": "Maize Borer",
+                "treatment": "Spray Chlorantraniliprole at early stages."
+            }
+        ]
+    },
+    {
+        "crop": "Soybean",
+        "season": "Kharif",
+        "soil_type": "Well-drained Loamy",
+        "recommended_varieties": ["JS 335", "PK 472", "JS 93-05"],
+        "optimal_temperature": "20-30°C",
+        "water_requirement": "400-600 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "20 kg/ha",
+            "phosphorus": "60 kg/ha",
+            "potassium": "20 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Stem Fly",
+                "treatment": "Use insecticide like Thiamethoxam."
+            },
+            {
+                "pest": "Soybean Rust",
+                "treatment": "Apply fungicide like Tebuconazole."
+            }
+        ]
+    },
+    {
+        "crop": "Cotton",
+        "season": "Kharif",
+        "soil_type": "Loamy",
+        "recommended_varieties": ["Dhanlakshmi", "JK 303", "Jai", "Hybrid 324"],
+        "optimal_temperature": "25-30°C",
+        "water_requirement": "500-700 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "80 kg/ha",
+            "phosphorus": "60 kg/ha",
+            "potassium": "40 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Cotton Bollworm",
+                "treatment": "Use insecticide like Cypermethrin"
+            },
+            {
+                "pest": "Whitefly",
+                "treatment": "Use insecticide like Imidacloprid"
+            }
+        ]
+    },
+    {
+        "crop": "Sugarcane",
+        "season": "Rabi",
+        "soil_type": "Loamy to sandy loam",
+        "recommended_varieties": ["Co 86032", "Co 1148", "Co 99004"],
+        "optimal_temperature": "20-30°C",
+        "water_requirement": "1200-1500 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "100 kg/ha",
+            "phosphorus": "50 kg/ha",
+            "potassium": "120 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Sugarcane Woolly Aphid",
+                "treatment": "Use systemic insecticide like Imidacloprid"
+            },
+            {
+                "pest": "Root Borer",
+                "treatment": "Use soil application of chlorpyrifos"
+            }
+        ]
+    },
+    {
+        "crop": "Barley",
+        "season": "Rabi",
+        "soil_type": "Loamy",
+        "recommended_varieties": ["Himalaya", "PL 426", "DWRB 133"],
+        "optimal_temperature": "10-15°C",
+        "water_requirement": "350-500 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "80 kg/ha",
+            "phosphorus": "40 kg/ha",
+            "potassium": "30 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Aphids",
+                "treatment": "Use insecticide like Malathion"
+            },
+            {
+                "pest": "Yellow Rust",
+                "treatment": "Spray with fungicide like Tebuconazole"
+            }
+        ]
+    },
+    {
+        "crop": "Groundnut",
+        "season": "Kharif",
+        "soil_type": "Sandy to loamy",
+        "recommended_varieties": ["TG 37A", "Dharani", "AK 12-24"],
+        "optimal_temperature": "25-30°C",
+        "water_requirement": "500-800 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "50 kg/ha",
+            "phosphorus": "40 kg/ha",
+            "potassium": "30 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Spodoptera",
+                "treatment": "Use insecticide like Chlorpyrifos"
+            },
+            {
+                "pest": "Leaf Spot",
+                "treatment": "Spray with fungicide like Mancozeb"
+            }
+        ]
+    },
+    {
+        "crop": "Tomato",
+        "season": "Kharif",
+        "soil_type": "Loamy",
+        "recommended_varieties": ["Pusa Ruby", "Hindustan", "Shubham"],
+        "optimal_temperature": "22-28°C",
+        "water_requirement": "400-600 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "80 kg/ha",
+            "phosphorus": "60 kg/ha",
+            "potassium": "50 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Whitefly",
+                "treatment": "Use insecticide like Imidacloprid"
+            },
+            {
+                "pest": "Tomato Fruit Borer",
+                "treatment": "Use pheromone traps or spray with Bacillus thuringiensis"
+            }
+        ]
+    },
+    {
+        "crop": "Chili",
+        "season": "Kharif",
+        "soil_type": "Loamy to sandy",
+        "recommended_varieties": ["Pusa Jwala", "Tezpur", "Suraj"],
+        "optimal_temperature": "20-30°C",
+        "water_requirement": "500-600 mm",
+        "fertilizer_recommendations": {
+            "nitrogen": "60 kg/ha",
+            "phosphorus": "50 kg/ha",
+            "potassium": "40 kg/ha"
+        },
+        "pest_management": [
+            {
+                "pest": "Aphids",
+                "treatment": "Use insecticide like Malathion"
+            },
+            {
+                "pest": "Chili Mite",
+                "treatment": "Use miticide like Dicofol"
+            }
+        ]
+    }
+]

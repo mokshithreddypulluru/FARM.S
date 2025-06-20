@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Service</title>
+    <link rel="stylesheet" href="css/sweather.style.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="logo">AgriHelp</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crop.html">Crops</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-container">
+        <div class="hero-content">
+            <h1>Weather Forecast</h1>
+            <p>Get the latest weather updates for your farm location.</p>
+            <form id="weather-form">
+                <input type="text" id="location" placeholder="Enter location" required>
+                <button type="submit">Get Weather</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Display Weather Data -->
+    <section id="weather-info">
+        <h2>Weather Information</h2>
+        <div id="weather-details"></div>
+    </section>
+
+    <script>
+        document.getElementById('weather-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const location = document.getElementById('location').value;
+            const weatherDetailsDiv = document.getElementById('weather-details');
+    
+            try {
+                const response = await fetch(`http://localhost:5000/api/weather/${location}`);
+                if (!response.ok) throw new Error('Weather data not found');
+                const data = await response.json();
+    
+                const forecast = data.list.slice(0, 5).map(f => `
+                    <div class="forecast-item">
+                        <p><strong>${new Date(f.dt * 1000).toLocaleString()}</strong></p>
+                        <p>Temperature: ${f.main.temp}°C</p>
+                        <p>Weather: ${f.weather[0].description}</p>
+                    </div>
+                `).join('');
+    
+                weatherDetailsDiv.innerHTML = `
+                    <h3>Location: ${data.city.name}</h3>
+                    ${forecast}
+                `;
+            } catch (error) {
+                weatherDetailsDiv.innerHTML = `<p>Error retrieving weather data.</p>`;
+                console.error(error);
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

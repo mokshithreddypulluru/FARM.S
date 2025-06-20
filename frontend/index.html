@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Website</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="nav-bar">
+        <div class="logo">AgriFarm</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <!-- Hero Section -->
+    <div class="hero-container" id="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Our Agricultural Website</h1>
+            <p>Bridging farmers and modern agricultural practices for a sustainable future.</p>
+            <button class="service-button">Explore Now</button>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-list" id="services-section">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <!-- Crop Recommendation Service -->
+            <a href="crop.html" class="service-card">
+                <img src="https://img.icons8.com/ios/452/tractor.png" alt="Crop Recommendation Icon">
+                <h3>Crop Recommendations</h3>
+                <p>Get personalized crop suggestions based on current weather and your region's conditions.</p>
+            </a>
+
+                        <!-- Weather Prediction Service -->
+            <a href="weather.html" class="service-card">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/partly-cloudy-day.png" alt="Weather Prediction Icon">
+                <h3>Weather Predictions</h3>
+                <p>Stay updated with accurate weather forecasts to plan your farming activities effectively.</p>
+            </a>
+
+            <!-- Product Suggestions Service -->
+            <a href="products.html" class="service-card">
+                <img src="https://img.icons8.com/ios/452/leaf.png" alt="Product Suggestions Icon">
+                <h3>Product Suggestions</h3>
+                <p>Find the best agricultural products tailored to the crops you're growing.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Section with Farmer Theme -->
+    <div class="contact-section" id="contact-section">
+        <form>
+            <div class="input__container">
+                <input type="text" class="input__search" id="name" placeholder="Your Name">
+                <div class="shadow__input"></div>
+            </div>
+            <div class="input__container">
+                <input type="email" class="input__search" id="email" placeholder="Your Email">
+                <div class="shadow__input"></div>
+            </div>
+            <div class="input__container">
+                <textarea class="input__search" id="message" placeholder="Your Message"></textarea>
+                <div class="shadow__input"></div>
+            </div>
+            <button class="input__button__shadow">Send Message</button>
+        </form>
+    </div>
+</main>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Agricultural Website. All Rights Reserved.</p>
+        <p>Follow us on <a href="#" style="color: #fff;">Facebook</a>, <a href="#" style="color: #fff;">Twitter</a>, and <a href="#" style="color: #fff;">Instagram</a>.</p>
+    </footer>
+
+    <script src="js/main.js"></script> <!-- Link to external JS file -->
+</body>
+
+</html>
